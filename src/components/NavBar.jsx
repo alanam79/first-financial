@@ -11,6 +11,9 @@ const NavBar = () => {
     setClick(!click);
   };
 
+  //useState to close the meno
+  const closeMenu = () => setClick(false);
+
   return (
     <div className="header">
       <nav className="navbar">
@@ -28,16 +31,16 @@ const NavBar = () => {
         {/* ternary operating stating if the menu is clicked it will pull from -100% to 0, which will pull the menu onto the screen, else nav-menu, no menu pulled over*/}
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <a href="/">Home</a>
+            <a href="/"onClick={closeMenu}>Home</a>
           </li>
           <li className="nav-item">
-            <a href="/">About</a>
+            <a href="#about" onClick={closeMenu}>About</a>
           </li>
           <li className="nav-item">
-            <a href="/">Testimonials</a>
+            <a href="#testimonials" onClick={closeMenu}>Testimonials</a>
           </li>
           <li className="nav-item">
-            <a href="/">Demo</a>
+            <a href="#demo" onClick={closeMenu}>Demo</a>
           </li>
         </ul>
       </nav>
